@@ -57,20 +57,27 @@ function _trainNetwork() {
   console.log(trainRes);
 
   // XXX: after network is trained, then we can process "brain net" requests
-  var letterTest = trainingData[2];
+  var letterTest = trainingData[24];
   var result = net.run(letterTest.input);
   console.log('test letter', letterTest.output, 'result', result);
 }
 
 var trainingData = []
-  , output = {}
-  , imageLoadIdx = 3;
+  , trainingImages = []
+  , output = {};
 
-var trainingImages = [{path: '/images/tile_1_1_C.jpg', letter: 'C'},
-                      {path: '/images/tile_3_2_C.jpg', letter: 'C'},
-                      {path: '/images/tile_5_1_C.jpg', letter: 'C'},
-                      {path: '/images/tile_1_2_B.jpg', letter: 'B'}];
+// load all training tiles
+var files = fs.readdirSync(__dirname + '/images/tiles');
+for (var i = 0; i < files.length; i++) {
+  var pattern = /_(.).jpg/,
+      fileName = files[i];
+  var letter = fileName.match(pattern)[1];
+  trainingImages.push({path: '/images/tiles/'+fileName, letter: letter});
+}
 
+var imageLoadIdx = trainingImages.length - 1;
+
+// get the first tile training data and start the process
 output[trainingImages[imageLoadIdx].letter] = 1;
 console.log(trainingImages[imageLoadIdx]);
 img.src = __dirname + trainingImages[imageLoadIdx].path;
