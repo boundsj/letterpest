@@ -15,7 +15,7 @@ function _getPixelData(ctx) {
     , trainingInput = [];
 
   // take a sparse sampling of pixles in the center of the tile
-  for (var i = 0; i < data.data.length; i += 2048) {
+  for (var i = 0; i < data.data.length; i += 64) {
     trainingInput.push(data.data[i]/255);
     trainingInput.push(data.data[i+1]/255);
     trainingInput.push(data.data[i+2]/255);
@@ -68,6 +68,7 @@ for (var i = 0; i < files.length; i++) {
   trainingImages.push({path: '/images/tiles/'+fileName, letter: letter});
 }
 var imageLoadIdx = trainingImages.length - 1;
+console.log('imageLoadIdx', imageLoadIdx);
 
 // get the first tile training data and start the process
 function start() {
@@ -81,7 +82,6 @@ exports.start = function() {
 
 exports.getLetterForTile = function(tileContext) {
   var tilePixels = _getPixelData(tileContext);
-  //var letterTest = trainingData[0];
   var result = net.run(tilePixels);
 
   return result;
