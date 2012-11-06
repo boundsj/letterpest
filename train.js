@@ -36,8 +36,9 @@ img.onload = function() {
   trainingData.push({input: _getPixels(), output: output});
 
   if (imageLoadIdx > 0) {
-    imageLoadIdx--;
     var trainingImage = trainingImages[imageLoadIdx];
+    console.log(trainingImage);
+    imageLoadIdx--;
     output = {};
     output[trainingImage.letter] = 1;
     img.src = __dirname + trainingImage.path;
@@ -53,6 +54,7 @@ function _trainNetwork() {
   console.log('training with ' + trainingData[0].input.length + ' data points:');
   var trainRes = net.train(trainingData, {errorThresh: 0.004, iterations: 20000});
   networkReady = true;
+  console.log('training complete');
 }
 
 var trainingData = []
@@ -61,6 +63,8 @@ var trainingData = []
 
 // load all training tiles
 var files = fs.readdirSync(__dirname + '/images/tiles');
+console.log(__dirname + '/images/tiles');
+console.log('files.count', files.count);
 for (var i = 0; i < files.length; i++) {
   var pattern = /_(.).jpg/,
       fileName = files[i];

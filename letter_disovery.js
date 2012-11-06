@@ -13,6 +13,7 @@ var loadDictionary = function(){
                      .toString()
                      .toLowerCase()
                      .split('\n');
+  //dictionary = ['album', 'wood', 'woodless'];
 };
 
 var buildTrie = function(){
@@ -89,12 +90,14 @@ var searchTrie = function(input){
 };
 
 var run = function(){
+  setup();
   var prompt = require('prompt');
   prompt.start();
 
   var respond = function(err, res){
     if (res.letters === "exit") { return; }
-    searchTrie(res.letters);
+    var words = searchTrie(res.letters);
+    console.log(words);
     setupRespond();
   };
 
@@ -103,7 +106,8 @@ var run = function(){
   };
   setupRespond();
 };
+//setup();
+//run();
 
 exports.loadDictionary = setup;
 exports.searchTrie = searchTrie;
-

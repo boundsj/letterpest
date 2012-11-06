@@ -48,7 +48,8 @@ app.post('/file-upload', function(req, res){
 
       // push the letter that is guessed by the learning algo
       // into our result set
-      letters.push({letter: letter});
+      //letters.push({letter: letter});
+      letters.push(letter.toLowerCase());
     }
 
     var words = letter_discovery.searchTrie(letters.join(letter));
