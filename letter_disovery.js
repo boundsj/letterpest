@@ -1,12 +1,22 @@
 var wordGraph = {}
   , _ = require('underscore')
-  , fs = require('fs');
+  , fs = require('fs')
+  , dictionary = [];
 
-var dictionary = fs.readFileSync('english.txt').toString().toLowerCase().split('\n');
+var setup = function(){
+  loadDictionary();
+  buildTrie();
+}
 
-var buildTrie = function() {
+var loadDictionary = function(){
+  dictionary = fs.readFileSync('english.txt')
+                     .toString()
+                     .toLowerCase()
+                     .split('\n');
+};
+
+var buildTrie = function(){
   for (var i = 0; i < dictionary.length; i++){
-
     var word = dictionary[i];
     var head = word.substring(0, 1);
     var tail = word.substring(1, word.length).split('');
@@ -24,6 +34,7 @@ var buildTrie = function() {
       var letter = tail[j];
       var link = currentNode.links[letter];
       var valid = (j === tail.length - 1) ? true : false;
+
       if (link === undefined){
         var node = {letter: letter, valid: valid, links: {}, parent: currentNode};
         currentNode.links[letter] = node;
@@ -37,10 +48,10 @@ var buildTrie = function() {
   }
 };
 
-var searchTrie = function(input) {
+var searchTrie = function(input){
   var letters = input.split('');
-  console.log('letters', letters);
   var startedLetters = [];
+  var words = [];
 
   for (var i = 0; i < letters.length; i++) {
     var letter = letters[i];
@@ -60,7 +71,7 @@ var searchTrie = function(input) {
         });
         var word = buildWord('', node).split('').reverse().join('');
         if (word.length <= input.length) {
-          console.log(word);
+          words.push(word);
         }
       }
 
@@ -73,19 +84,26 @@ var searchTrie = function(input) {
     }
     traverseNodes(root);
   }
+
+  return words;
 };
 
-buildTrie();
+var run = function(){
+  var prompt = require('prompt');
+  prompt.start();
 
-var prompt = require('prompt');
-prompt.start();
-var respond = function(err, res){
-  if (res.letters === "exit") { return; }
-  searchTrie(res.letters);
+  var respond = function(err, res){
+    if (res.letters === "exit") { return; }
+    searchTrie(res.letters);
+    setupRespond();
+  };
+
+  var setupRespond = function(){
+    prompt.get(['letters'], respond);
+  };
   setupRespond();
 };
-var setupRespond = function(){
-  prompt.get(['letters'], respond);
-};
-setupRespond();
+
+exports.loadDictionary = setup;
+exports.searchTrie = searchTrie;
 

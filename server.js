@@ -2,6 +2,7 @@ var express = require('express')
   , app = express()
   , train = require('./train.js')
   , extract_tiles = require('./extract_tiles.js')
+  , letter_discovery = require('./letter_disovery.js')
   , engines = require('consolidate')
   , _ = require('underscore');
 
@@ -13,7 +14,6 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res){
-  //var result = train.getLetterForTile();
   res.render('index', {
     title: 'translate the tiles!'
   });
@@ -51,11 +51,12 @@ app.post('/file-upload', function(req, res){
       letters.push({letter: letter});
     }
 
-    // render the results
-    //res.send(letters);
+    var words = letter_discovery.searchTrie(letters.join(letter));
+
     res.render('result', {
       image: '/' + req.files.image_name.path,
-      letters: letters
+      letters: letters,
+      words: _.sortBy(words, function(word) { return 1 / word.length; })
     });
   });
 
@@ -64,6 +65,7 @@ app.post('/file-upload', function(req, res){
 
 app.listen(3000);
 
-// XXX: logically, server should wait on training to finish
+letter_discovery.loadDictionary();
+// XXX: not returning?
 train.start();
 

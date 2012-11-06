@@ -6,7 +6,7 @@ var Canvas = require('canvas')
 
 var img = new Image;
 
-Extractor = function() {
+Extractor = function(){
   events.EventEmitter.call(this);
   var self = this;
 
