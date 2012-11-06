@@ -1,0 +1,16 @@
+{
+  "name": "letterpest",
+  "version": "0.0.1",
+  "dependencies": {
+    "brain": "0.6.1",
+    "canvas": "0.13.1",
+    "consolidate": "0.5.0",
+    "express": "3.0.0",
+    "hogan": "2.0.0",
+    "underscore": "1.4.2"
+  },
+  "engines": {
+    "node": "0.8.12",
+    "npm": "1.1.49"
+  }
+}

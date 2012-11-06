@@ -64,7 +64,9 @@ app.post('/file-upload', function(req, res){
   extractor.extractFromPath(uploadPath);
 });
 
-app.listen(3000);
+var port = process.env.PORT || 3000
+app.listen(port);
+console.log('listening on port:', port);
 
 letter_discovery.loadDictionary();
 // XXX: not returning?
