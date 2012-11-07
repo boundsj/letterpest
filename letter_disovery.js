@@ -9,7 +9,7 @@ var setup = function(){
 }
 
 var loadDictionary = function(){
-  dictionary = fs.readFileSync('english.txt')
+  dictionary = fs.readFileSync('./data/dictionaries/english.txt')
                      .toString()
                      .toLowerCase()
                      .split('\n');
