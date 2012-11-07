@@ -68,15 +68,15 @@ var trainingData = []
   , output = {};
 
 // load all training tiles
-var files = fs.readdirSync(__dirname + '/images/tiles');
-console.log(__dirname + '/images/tiles');
+var files = fs.readdirSync(__dirname + '/data/tiles');
+console.log(__dirname + '/data/tiles');
 console.log('files.length', files.length);
 for (var i = 0; i < files.length; i++) {
   var pattern = /_(.).jpg/,
       // XXX: should not load .DS_Store (or hidden files) how to in node?
       fileName = files[i];
   var letter = fileName.match(pattern)[1];
-  trainingImages.push({path: '/images/tiles/'+fileName, letter: letter});
+  trainingImages.push({path: '/data/tiles/'+fileName, letter: letter});
 }
 var imageLoadIdx = trainingImages.length - 1;
 console.log('imageLoadIdx', imageLoadIdx);
