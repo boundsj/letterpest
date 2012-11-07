@@ -64,11 +64,15 @@ app.post('/file-upload', function(req, res){
   extractor.extractFromPath(uploadPath);
 });
 
+// there will be a delay
+// might be better to make a callback and have the
+// web server give some descriptive error while we are in the
+// loading/training state
+letter_discovery.loadDictionary();
+train.start();
+
 var port = process.env.PORT || 3000
 app.listen(port);
 console.log('listening on port:', port);
 
-letter_discovery.loadDictionary();
-// XXX: not returning?
-train.start();
 
