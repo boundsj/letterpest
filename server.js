@@ -52,7 +52,7 @@ app.post('/file-upload', function(req, res){
       letters.push(letter.toLowerCase());
     }
 
-    var words = letter_discovery.searchTrie(letters.join(letter));
+    var words = letter_discovery.searchTrie(letters.join(''));
 
     res.render('result', {
       image: '/' + req.files.image_name.path,

@@ -53,6 +53,8 @@ var searchTrie = function(input){
   var letters = input.split('');
   var startedLetters = [];
   var words = [];
+  var frequency = getLetterFrequency(input);
+  console.log('input', input, 'freq', frequency);
 
   for (var i = 0; i < letters.length; i++) {
     var letter = letters[i];
@@ -71,9 +73,9 @@ var searchTrie = function(input){
           return node.parent === null ? node.letter + w : node.letter + buildWord(w, node.parent);
         });
         var word = buildWord('', node).split('').reverse().join('');
-        if (word.length <= input.length) {
-          words.push(word);
-        }
+        if (word.length > input.length) { return; }
+        if (invalidLetterFrequency(frequency, getLetterFrequency(word), word)) { return; }
+        words.push(word);
       }
 
       var keys = _.keys(node.links);
@@ -87,6 +89,29 @@ var searchTrie = function(input){
   }
 
   return words;
+};
+
+var invalidLetterFrequency = function(set, word) {
+  for (setLetter in set) {
+    var wordLetterCount = word[setLetter] || 0;
+    var setLetterCount = set[setLetter];
+    if (wordLetterCount > setLetterCount) { return true; }
+  }
+
+  return false;
+};
+
+
+var getLetterFrequency = function(chars){
+  var counts = {};
+  _.map(chars.split(''), function(char){
+    if (counts.hasOwnProperty(char)){
+      counts[char]++;
+      return;
+    };
+    counts[char] = 1;
+  });
+  return counts;
 };
 
 var run = function(){
