@@ -1,7 +1,46 @@
-span
-{
-  font-family: sans-serif;
-  font-size: 40px;
-  padding: 0px;
-  margin: 0px;
+body {
+  margin-top: 25px;
+  margin-left: 37px;
+  font-family: 'Helvetica', sans-serif;
 }
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.title_main {
+  margin-top: 50px;
+  width: 100px;
+  font-size: 48px
+}
+
+.mouse_main {
+  background-image: url('/static/img/mouse_main.png');
+  width: 125px;
+  height: 145px;
+  background-size: 125px 145px;
+  margin-bottom: 20px;
+}
+
+.inst_main {
+  font-size: 18px;
+  color: #595959;
+  line-height: 125%;
+  width: 280px;
+}
+
+//span
+//{
+//  font-family: sans-serif;
+//  font-size: 40px;
+//  padding: 0px;
+//  margin: 0px;
+//}

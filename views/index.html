@@ -2,9 +2,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+<link href="/static/css/areset.css" rel="stylesheet" type="text/css">
+<link href="/static/css/main.css" rel="stylesheet" type="text/css">
 </head>
-<h1>hellow!</h1>
-<br />
+
+<div class="title_main left">HELLO PEST!</div>
+<div class="mouse_main right"></div>
+<div class="inst_main clear">
+  Take a screenshot of your Letterpress board and 
+  we'll show you all the words you can play!
+</div>
+
 <form method="post" enctype="multipart/form-data" action="/file-upload">
     <input type="file" accept="image/*" capture="camera" name="image_name">
     <input type="submit" name="submit_btn">
