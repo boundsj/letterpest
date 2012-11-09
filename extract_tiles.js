@@ -23,6 +23,11 @@ Extractor = function(){
       , col = 1
       , contexts = [];
 
+    // we 'normalize' for iphone5 retina and adjust if required
+    var heightAdj = 1136 - img.height;
+    console.log('img.height', img.height);
+    topY -= heightAdj;
+
     function _extractAndWriteTile(){
       var canvas = new Canvas(128, 128)
         , ctx = canvas.getContext('2d');
