@@ -1,20 +1,25 @@
 <head>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-
-<link href="/static/css/areset.css" rel="stylesheet" type="text/css">
-<link href="/static/css/main.css" rel="stylesheet" type="text/css">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="/static/js/custom_upload.js"></script>
+  <link href="/static/css/areset.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/main.css" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 
-<div class="title_main left">HELLO PEST!</div>
+<div class="title_main left">HELLO <span class="bolder">PEST!</span></div>
 <div class="mouse_main right"></div>
 <div class="inst_main clear">
   Take a screenshot of your Letterpress board and 
   we'll show you all the words you can play!
 </div>
+<div class="spacer-20"></div>
+<div class="upload_board clear" id="upload"></div>
 
 <form method="post" enctype="multipart/form-data" action="/file-upload">
-    <input type="file" accept="image/*" capture="camera" name="image_name">
-    <input type="submit" name="submit_btn">
+  <input id="upload-real" type="file" class="no-display" accept="image/*" capture="camera" name="image_name">
+  <button id="submit-file" type="submit" class="no-display" name="submit_btn">submit</button>
 </form>
+
