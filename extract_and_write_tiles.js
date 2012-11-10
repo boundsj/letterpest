@@ -19,7 +19,7 @@ img.onload = function() {
     var canvas = new Canvas(128, 128)
       , ctx = canvas.getContext('2d')
       // XXX: hardcoding _2 (for now), this needs to be upgraded to loop through all training sets
-      , out = fs.createWriteStream(__dirname + '/data/tile_5_' + row + '_' + col + '.jpg');
+      , out = fs.createWriteStream(__dirname + '/data/tile_6_' + row + '_' + col + '.jpg');
 
     ctx.drawImage(img, topX, topY, 128, 128, 0, 0, 128, 128);
 
@@ -56,5 +56,5 @@ img.onload = function() {
 };
 
 // XXX: need to loop through many sets (see above)
-img.src = __dirname + '/data/training_005.jpg';
+img.src = __dirname + '/data/training_006.jpg';
 

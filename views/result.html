@@ -59,9 +59,22 @@
     <div class="circle" id="ctrl-board"></div>
   </div>
 
-  <span class="clear">
-    {{#words}}
-      {{.}}
-    {{/words}}
-  </span>
+  <div class="spacer-20"></div>
+  <div class="your-board">YOUR WORDS:</div>
+
+  <div class="btn-entire-word-set letter-select-highlight">ENTIRE SET</div>
+  <div class="btn-specific-letters">SPECIFIC LETTERS</div>
+  <div class="letter-btn-footer"></div>
+
+  <div class="spacer-20 clear"></div>
+
+  <div class="result-list">
+    <div class="word-count">{{wordCount}} words found!</div>
+    <div class="divider"></div>
+    <ul>
+      {{#words}}
+        <li>{{.}}</li>
+      {{/words}}
+    </ul>
+  </div>
 </div>
