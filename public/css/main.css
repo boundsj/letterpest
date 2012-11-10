@@ -164,18 +164,18 @@ body {
 .results .result-list li {
   margin-bottom: 15px;
 }
-.results .result-list .word-count {
+.results .word-count {
   font-family: 'Lato', sans-serif;
   font-style: italic;
   color: #E61B66;
   text-align: center;
-  margin-top: -20px;
+  margin-top: 0px;
 }
-.results .result-list .divider {
+.results .divider {
   background-color: #373737;
   width: 100%;
   height: 1px;
-  margin-top: 4px;
-  margin-bottom: 12px;
+  margin-top: 5px;
+  margin-bottom: 16px;
 }
 

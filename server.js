@@ -4,6 +4,7 @@ var express = require('express')
   , extract_tiles = require('./extract_tiles.js')
   , letter_discovery = require('./letter_disovery.js')
   , engines = require('consolidate')
+  , knox = require('knox')
   , _ = require('underscore');
 
 app.engine('html', engines.hogan);
@@ -19,7 +20,20 @@ app.get('/', function(req, res){
 
 app.post('/file-upload', function(req, res){
   var uploadPath = __dirname + '/' + req.files.image_name.path;
+  var awsPath = 'https://s3-us-west-1.amazonaws.com/letterpest/' + req.files.image_name.path + '.jpg';
+  var result = res;
   console.log(uploadPath);
+
+  // save image to s3
+  // XXX: should probably delete file locally
+  //      but, oddly, when on heroku the file is removed from
+  //      uploads without me doing anything - in any case
+  //      the file is saved to s3 here
+  var client = knox.createClient({
+      key: process.env.AWS_KEY
+    , secret: process.env.AWS_SECRET
+    , bucket: process.env.AWS_BUCKET
+  });
 
   extractor = new extract_tiles.Extractor();
 
@@ -54,16 +68,26 @@ app.post('/file-upload', function(req, res){
 
     var words = letter_discovery.searchTrie(letters.join(''));
 
-    res.render('result', {
-      image: '/' + req.files.image_name.path,
-      letters: letters,
-      letters_row1: lettersUpperCase.slice(0, 5),
-      letters_row2: lettersUpperCase.slice(5, 10),
-      letters_row3: lettersUpperCase.slice(10, 15),
-      letters_row4: lettersUpperCase.slice(15, 20),
-      letters_row5: lettersUpperCase.slice(20, 25),
-      words: _.sortBy(words, function(word) { return 1 / word.length; }),
-      wordCount: words.length
+    console.log('attempting to save ' + uploadPath + ' to s3');
+    var headers = {'Content-Type': 'image/jpeg', 'x-amz-acl': 'public-read'};
+    client.putFile(uploadPath, req.files.image_name.path + '.jpg', headers, function(err, res){
+      if (err) {
+        console.log(err);
+      }
+      if (200 == res.statusCode) {
+        console.log('saved to s3');
+      }
+      result.render('result', {
+        image: awsPath,
+        letters: letters,
+        letters_row1: lettersUpperCase.slice(0, 5),
+        letters_row2: lettersUpperCase.slice(5, 10),
+        letters_row3: lettersUpperCase.slice(10, 15),
+        letters_row4: lettersUpperCase.slice(15, 20),
+        letters_row5: lettersUpperCase.slice(20, 25),
+        words: _.sortBy(words, function(word) { return 1 / word.length; }),
+        wordCount: words.length
+      });
     });
   });
 
