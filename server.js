@@ -14,9 +14,7 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res){
-  res.render('index', {
-    title: 'translate the tiles!'
-  });
+  res.render('index');
 });
 
 app.post('/file-upload', function(req, res){
@@ -29,6 +27,7 @@ app.post('/file-upload', function(req, res){
   // learning algo and get letter results
   extractor.on("done", function(contexts) {
     var letters = [];
+    var lettersUpperCase = [];
 
     // for every tile's canvas context...
     for (var i = 0; i < contexts.length; i++) {
@@ -50,6 +49,7 @@ app.post('/file-upload', function(req, res){
       // into our result set
       //letters.push({letter: letter});
       letters.push(letter.toLowerCase());
+      lettersUpperCase.push(letter.toUpperCase());
     }
 
     var words = letter_discovery.searchTrie(letters.join(''));
@@ -57,6 +57,11 @@ app.post('/file-upload', function(req, res){
     res.render('result', {
       image: '/' + req.files.image_name.path,
       letters: letters,
+      letters_row1: lettersUpperCase.slice(0, 5),
+      letters_row2: lettersUpperCase.slice(5, 10),
+      letters_row3: lettersUpperCase.slice(10, 15),
+      letters_row4: lettersUpperCase.slice(15, 20),
+      letters_row5: lettersUpperCase.slice(20, 25),
       words: _.sortBy(words, function(word) { return 1 / word.length; })
     });
   });

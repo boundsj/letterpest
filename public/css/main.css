@@ -3,6 +3,10 @@ body {
   font-family: 'ExistenceLight', 'Helvetica', sans-serif;
 }
 
+/*
+ * Fonts
+ */
+
 @font-face {
     font-family: 'ExistenceLight';
     src: url('../font/Existence-Light-webfont.eot');
@@ -14,6 +18,10 @@ body {
     font-style: normal;
 }
 
+/*
+ * General
+ */
+
 .right {
   float: right;
 }
@@ -23,24 +31,34 @@ body {
 }
 
 .clear {
-  clear: both;
+  clear: left;
+}
+
+.no-display {
+  display: none;
 }
 
 .spacer-20 {
   margin-bottom: 20px;
 }
 
-.title_main {
+/*
+ * Main page
+ */
+
+.main {}
+
+.main .title_main {
   margin-top: 32px;
   width: 100px;
   font-size: 60px;
   margin-left: 22px;
 }
-.title_main .bolder {
+.main .title_main .bolder {
   font-weight: 900;
 }
 
-.mouse_main {
+.main .mouse_main {
   background-image: url('/static/img/mouse_main.png');
   width: 125px;
   height: 145px;
@@ -48,7 +66,7 @@ body {
   margin-bottom: 20px;
 }
 
-.inst_main {
+.main .inst_main {
   font-size: 18px;
   font-family: 'Lato';
   color: #595959;
@@ -58,7 +76,7 @@ body {
   margin-left: 22px;
 }
 
-.upload_board {
+.main .upload_board {
   background-image: url('/static/img/upload_board.png');
   width: 150px;
   height: 149px;
@@ -66,7 +84,48 @@ body {
   margin: auto;
 }
 
-.no-display {
-  display: none;
+/*
+ * Results page
+ */
+
+.results {
+  font-family: 'Lato';
+  margin-bottom: 10px;
+}
+
+.results .your-board {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.results table {
+  font-family: 'Lato';
+  font-size: 20px;
+  font-weight: normal;
+  margin: auto;
+}
+.results td, tr {
+  padding: 8px;
+}
+
+.results .board-img {
+  text-align: center;
+}
+
+.results .controller {
+  text-align: center;
+}
+.results .controller .circle {
+  display: inline-block;
+  background: #373737;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.results .controller .focus {
+  background: #489878;
 }
 

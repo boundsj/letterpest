@@ -9,17 +9,19 @@
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 
-<div class="title_main left">HELLO <span class="bolder">PEST!</span></div>
-<div class="mouse_main right"></div>
-<div class="inst_main clear">
-  Take a screenshot of your Letterpress board and 
-  we'll show you all the words you can play!
+<div class="main">
+  <div class="title_main left">HELLO <span class="bolder">PEST!</span></div>
+  <div class="mouse_main right"></div>
+  <div class="inst_main clear">
+    Take a screenshot of your Letterpress board and 
+    we'll show you all the words you can play!
+  </div>
+  <div class="spacer-20"></div>
+  <div class="upload_board clear" id="upload"></div>
+  
+  <form class="spacer-20" method="post" enctype="multipart/form-data" action="/file-upload">
+    <input id="upload-real" type="file" class="no-display" accept="image/*" capture="camera" name="image_name">
+    <button id="submit-file" type="submit" class="no-display" name="submit_btn">submit</button>
+  </form>
 </div>
-<div class="spacer-20"></div>
-<div class="upload_board clear" id="upload"></div>
-
-<form class="spacer-20" method="post" enctype="multipart/form-data" action="/file-upload">
-  <input id="upload-real" type="file" class="no-display" accept="image/*" capture="camera" name="image_name">
-  <button id="submit-file" type="submit" class="no-display" name="submit_btn">submit</button>
-</form>
 
