@@ -149,14 +149,14 @@ body {
 }
 
 .results .result-list {
-  font-family: 'ExistenceLight', sans-serif;
-  font-style: bold;
+  font-size: 25px;
   padding: 20px;
   height: 100%;
   overflow: scroll;
 }
 .results .result-list li {
   margin-bottom: 15px;
+  text-transform: uppercase;
 }
 .results .word-count {
   font-family: 'Lato', sans-serif;
@@ -179,6 +179,11 @@ body {
 .results .filter {
   margin-top: 15px;
   text-align: center;
+}
+
+#filter {
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .results .filter .filter-text {

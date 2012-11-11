@@ -27,11 +27,12 @@ $(document).ready(function() {
     populateResultList();
   });
   function populateResultList(){
-    var searchTerm = $('#filter').val();
+    var searchTerm = $('#filter').val().toLowerCase();
     var filtered = _.filter(words, function(word){
-      return word.indexOf(searchTerm) !== -1;
+      return word.toLowerCase().indexOf(searchTerm) !== -1;
     });
     $('.result-list').html('<ul>' + createListItems(filtered) + '</ul>');
+    $('#word-count').text(filtered.length);
   }
   function createListItems(list){
     var ret = '';
