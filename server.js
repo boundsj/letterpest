@@ -86,7 +86,7 @@ app.post('/file-upload', function(req, res){
         letters_row4: lettersUpperCase.slice(15, 20),
         letters_row5: lettersUpperCase.slice(20, 25),
         words: _.sortBy(words, function(word) { return 1 / word.length; }),
-        wordCount: words.length
+        wordCount: words.length,
       });
     });
   });

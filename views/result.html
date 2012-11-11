@@ -2,8 +2,16 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
   <script src="/static/js/result.js"></script>
+  <script type="text/javascript">
+    var words = [
+        {{#words}}
+          '{{.}}',
+        {{/words}}
+    ];
+  </script>
   <link href="/static/css/areset.css" rel="stylesheet" type="text/css">
   <link href="/static/css/main.css" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -62,14 +70,21 @@
   <div class="spacer-20"></div>
   <div class="your-board">YOUR WORDS:</div>
 
-  <div class="btn-entire-word-set letter-select-highlight">ENTIRE SET</div>
-  <div class="btn-specific-letters">SPECIFIC LETTERS</div>
-  <div class="letter-btn-footer"></div>
+  <div class="letter-filter">
+    <div id="btn-entire-set" class="btn-filter left focus">ENTIRE SET</div>
+    <div id="btn-specific-letters" class="btn-filter right">SPECIFIC LETTERS</div>
+    <div class="letter-btn-footer clear"></div>
+  </div>
 
-  <div class="spacer-20 clear"></div>
+  <div class="filter no-display">
+    <div>Find words containing:</div>
+    <input id="filter" class="filter-text" type="text" name="ftext">
+    <div class="divider"></div>
+  </div>
 
-  <div class="word-count">{{wordCount}} words found!</div>
+  <div class="word-count bump-down"><span id="word-count">{{wordCount}}</span> words found!</div>
   <div class="divider"></div>
+
   <div class="result-list">
     <ul>
       {{#words}}
