@@ -26,6 +26,31 @@ $(document).ready(function() {
   $('#filter').bind("change" , function (){
     populateResultList();
   });
+  $('.result-list ul li span').live('click', function(){
+    unhighlight();
+    var word = $(this).text();
+    for (i in word){
+      var letter = word[i];
+      $('.board-letters tr td').each(function(i){
+        var cell = $($('.board-letters tr td')[i]);
+        if (!cell.hasClass('highlighted')) {
+          var cellLetter = $.trim(cell.text().toLowerCase());
+          if (letter === cellLetter) {
+            cell.addClass('highlighted');
+          }
+        }
+      });
+    }
+    $(this).addClass('highlighted');
+  });
+
+  function unhighlight(){
+    $('.result-list ul li span').removeClass('highlighted');
+    $('.board-letters tr td').each(function(i){
+      var cell = $($('.board-letters tr td')[i]);
+      cell.removeClass('highlighted');
+    });
+  }
   function populateResultList(){
     var searchTerm = $('#filter').val().toLowerCase();
     var filtered = _.filter(words, function(word){
@@ -38,7 +63,7 @@ $(document).ready(function() {
     var ret = '';
     for (var i = 0; i < list.length; i++){
       var elem = list[i];
-      ret += '<li>' + elem + '</li>';
+      ret += '<li><span>' + elem + '</span></li>';
     }
     return ret;
   }

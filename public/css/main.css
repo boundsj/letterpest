@@ -42,6 +42,10 @@ body {
   margin-bottom: 20px;
 }
 
+.results .highlighted {
+  background-color: #6EFEC1;
+}
+
 /*
  * Main page
  */
@@ -107,7 +111,10 @@ body {
   margin: auto;
 }
 .results td, tr {
-  padding: 8px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 15px;
 }
 
 .results .board-img {
@@ -180,12 +187,10 @@ body {
   margin-top: 15px;
   text-align: center;
 }
-
 #filter {
   font-size: 20px;
   text-transform: uppercase;
 }
-
 .results .filter .filter-text {
   border-top: none;
   border-left: none;
