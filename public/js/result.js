@@ -41,7 +41,6 @@ $(document).ready(function() {
     highlightLetterFilterButton(this);
     $('.filter').removeClass('no-display');
     $('.word-count').removeClass('bump-down');
-    unhighlight();
   });
 
   /*
@@ -60,23 +59,26 @@ $(document).ready(function() {
    * (currently) about which letter is "best" in the context of
    * #winning!
    */
-  $('.result-list ul li span').live('click', function(){
-    unhighlight();
-    var word = $(this).text();
-    for (i in word){
-      var letter = word[i];
-      $('.board-letters tr td').each(function(i){
-        var cell = $($('.board-letters tr td')[i]);
-        if (!cell.hasClass('highlighted')) {
-          var cellLetter = $.trim(cell.text().toLowerCase());
-          if (letter === cellLetter) {
-            cell.addClass('highlighted');
+  function bindWordListClicks() {
+    $('.result-list ul li span').bind('click', function(){
+      unhighlight();
+      var word = $(this).text();
+      for (i in word){
+        var letter = word[i];
+        $('.board-letters tr td').each(function(i){
+          var cell = $($('.board-letters tr td')[i]);
+          if (!cell.hasClass('highlighted')) {
+            var cellLetter = $.trim(cell.text().toLowerCase());
+            if (letter === cellLetter) {
+              cell.addClass('highlighted');
+            }
           }
-        }
-      });
-    }
-    $(this).addClass('highlighted');
-  });
+        });
+      }
+      $(this).addClass('highlighted');
+    });
+  }
+  bindWordListClicks();
 
   function unhighlight(){
     $('.result-list ul li span').removeClass('highlighted');
@@ -92,6 +94,7 @@ $(document).ready(function() {
       return word.toLowerCase().indexOf(searchTerm) !== -1;
     });
     $('.result-list').html('<ul>' + createListItems(filtered) + '</ul>');
+    bindWordListClicks();
     $('#word-count').text(filtered.length);
   }
 
