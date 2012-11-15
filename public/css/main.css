@@ -50,42 +50,55 @@ body {
  * Main page
  */
 
-.main {}
-
-.main .title_main {
-  margin-top: 32px;
-  width: 100px;
-  font-size: 60px;
-  margin-left: 22px;
-}
-.main .title_main .bolder {
-  font-weight: 900;
+.main-full {
+  /* put some css here!!! */
+  font-size: 42px;
 }
 
-.main .mouse_main {
-  background-image: url('/static/img/mouse_main.png');
-  width: 125px;
-  height: 145px;
-  background-size: 125px 145px;
-  margin-bottom: 20px;
+/* by default, don't display mobile stuff */
+.main {
+  display: none;
 }
 
-.main .inst_main {
-  font-size: 18px;
-  font-family: 'Lato';
-  color: #595959;
-  line-height: 125%;
-  width: 280px;
-  margin-bottom: 20px;
-  margin-left: 22px;
-}
-
-.main .upload_board {
-  background-image: url('/static/img/upload_board.png');
-  width: 150px;
-  height: 149px;
-  background-size: 150px 149px;
-  margin: auto;
+@media screen and (max-width:480px) {
+  .main-full {
+    display: none;
+  }
+  .main {
+    display: inline;
+  }
+  .main .title_main {
+    margin-top: 32px;
+    width: 100px;
+    font-size: 60px;
+    margin-left: 22px;
+  }
+  .main .title_main .bolder {
+    font-weight: 900;
+  }
+  .main .mouse_main {
+    background-image: url('/static/img/mouse_main.png');
+    width: 125px;
+    height: 145px;
+    background-size: 125px 145px;
+    margin-bottom: 20px;
+  }
+  .main .inst_main {
+    font-size: 18px;
+    font-family: 'Lato';
+    color: #595959;
+    line-height: 125%;
+    width: 280px;
+    margin-bottom: 20px;
+    margin-left: 22px;
+  }
+  .main .upload_board {
+    background-image: url('/static/img/upload_board.png');
+    width: 150px;
+    height: 149px;
+    background-size: 150px 149px;
+    margin: auto;
+  }
 }
 
 /*

@@ -33,6 +33,11 @@ Extractor = function(){
         , ctx = canvas.getContext('2d');
 
       ctx.drawImage(img, topX, topY, 128, 128, 0, 0, 128, 128);
+
+      // change all non black pixels to white to simplify image
+      var imageData = ctx.getImageData(0, 0, 128, 128);
+
+
       contexts.push(ctx);
       _stage();
     };
