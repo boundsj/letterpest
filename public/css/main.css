@@ -114,7 +114,8 @@ body {
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 15px;
+  padding-bottom: 8px;
+  padding-top: 8px;
 }
 
 .results .board-img {
@@ -136,13 +137,23 @@ body {
   background: #489878;
 }
 
+.results .letter-filter {
+  width: 100%;
+  text-align: center;
+}
+.results .letter-filter-spacer {
+  width: 2%;
+}
 .results .btn-filter {
   background-color: #fff;
   color: #777;
   padding: 10px;
-  width: 43.2%;
   border: 1px solid;
+  width: 43.2%;
+  margin-left: 0;
+  margin-right: 0;
 }
+
 .results .focus {
   background-color: #373737;
   color: #fff;
