@@ -170,7 +170,7 @@ body {
 .results .focus {
   background-color: #373737;
   color: #fff;
-  border-color: #777;
+  border-color: #373737;
 }
 .results .letter-btn-footer {
   margin-top:46px;
@@ -196,7 +196,7 @@ body {
   text-align: center;
 }
 .results .bump-down {
-  margin-top: 20px;
+  margin: 10px auto;
 }
 
 .results .divider {
@@ -208,7 +208,7 @@ body {
 }
 
 .results .filter {
-  margin-top: 15px;
+  margin-top: 20px;
   text-align: center;
 }
 #filter {
@@ -221,6 +221,6 @@ body {
   border-right: none;
   border-bottom: dotted;
   width: 180px;
-  margin-bottom: 20px;
+  margin: 8px 0 20px;
 }
 
