@@ -38,7 +38,7 @@ handleImgLoad = function(){
   imageLoadIdx--;
 
   if (imageLoadIdx >= 0) {
-    console.log('imageLoadIdx', imageLoadIdx);
+    //console.log('imageLoadIdx', imageLoadIdx);
     var trainingImage = trainingImages[imageLoadIdx];
     output = {};
     output[trainingImage.letter] = 1;
@@ -55,7 +55,6 @@ handleImgLoad = function(){
 };
 
 function _trainNetwork() {
-  console.log(trainingData);
   console.log('training with ' + trainingData[0].input.length + ' data points:');
   var trainRes = net.train(trainingData, {log: true, logPeriod: 10, errorThresh: 0.002, iterations: 20000});
   console.log(trainRes);
@@ -79,7 +78,7 @@ for (var i = 0; i < files.length; i++) {
   trainingImages.push({path: '/data/tiles/'+fileName, letter: letter});
 }
 var imageLoadIdx = trainingImages.length - 1;
-console.log('imageLoadIdx', imageLoadIdx);
+//console.log('imageLoadIdx', imageLoadIdx);
 
 // get the first tile training data and start the process
 function start() {
