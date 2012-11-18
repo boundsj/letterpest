@@ -16,11 +16,11 @@
   <div class="header"><img src="/static/img/letterpest_logo.png" /></div>
 
   <ul class="nav">
-    <li class="active">Pestboard</li>
-    <li>How It Works</li>
-    <li>About</li>
+    <li data-tab="pestboard">Pestboard</li>
+    <li data-tab="how">How It Works</li>
+    <li data-tab="about">About</li>
   </ul>
-  <div class="content">
+  <div class="content pestboard">
     <div class="dictionary">
       word meanings
     </div>
@@ -48,13 +48,63 @@
       </div>
       <div class="clear"></div>
     </div>
+    <div class="footer">
+      <div class="pest"><img src="/static/img/footer_pest.png" /></div>
+    </div>
 
+  </div>
+  <div class="content how hide">
+    <h2>How it works</h2>
+    <div class="step">
+      <h3>Step 1</h3>
+      <div class="description">Go to one of the games in the Letterpress app on your phone.</div>
+      <img src="/static/img/letterpress_logo.png" class="letterpresslogo" />
+    </div>
+    <div class="step">
+      <h3>Step 2</h3>
+      <div class="description">Take a screenshot of your game.</div>
+      <img src="/static/img/screenshotting.png" class="howtoimg" />
+      <div class="note"><em>How to screenshot</em> <br />
+        Hold down the hold and home buttons as the same time.
+      </div>
+    </div>
+    <div class="step">
+      <h3>Step 3</h3>
+      <div class="description">Go back to letterpest and upload your board.</div>
+      <img src="/static/img/uploading.png" class="uploading" />
+      <div class="note"><em>Note</em> <br />
+        Uploading only works in iOS6. This is not supported in other iOSs.
+      </div>
+
+    </div>
+    <div class="step">
+      <h3>Step 4</h3>
+      <div class="description">All the words you can possibly play to beat your frienemies!</div>
+      <img src="/static/img/words.png" class="words" />
+      <div class="note"><em>Plus</em> <br />
+        Search for words with specific letters.
+      </div>
+
+    </div>
+
+    <div class="tryit">Try it out by opening Letterpest on your phone today!</div>
+
+    <div class="footer">
+      <div class="pest"><img src="/static/img/footer_pest.png" /></div>
+    </div>
+
+    
+  </div>
+  <div class="content about hide">
+    <h2>About</h2>
+
+    <div class="footer">
+      <div class="pest"><img src="/static/img/footer_pest.png" /></div>
+    </div>
 
   </div>
 
-  <div class="footer">
-    <div class="pest"><img src="/static/img/footer_pest.png" /></div>
-  </div>
+
   
   
 </div>

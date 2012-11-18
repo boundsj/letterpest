@@ -66,20 +66,20 @@ body {
 }
 .main-full .header{ 
   width:199px;
-  margin:10px auto;
+  margin:0px auto 0px;
 }
 .main-full .nav{ 
 
   width:350px;
   text-align:center;
-  margin:10px auto 50px;
+  margin:0px auto 5px;
 
 }
 .main-full .nav li{
   display:inline;
   list-style:none;
   font-family:arial;
-  font-size:20px;
+  font-size:16px;
   padding:5px;
   font-weight:normal;
   cursor:pointer;
@@ -93,7 +93,10 @@ body {
   width:900px;
   margin:auto;
   position:relative;
-
+  min-height:75%;
+}
+.main-full .content.hide{ 
+  display:none;
 }
 .main-full .dictionary{ 
   width:350px;
@@ -147,16 +150,70 @@ body {
 
 .main-full h2{ 
   font-weight:bold;
-  
+  text-transform:uppercase;
+  font-size:36px;
+  margin-bottom:2px;
 }
 .main-full h5{ 
   font-size:16px;
   color:#aaa;
   text-transform:uppercase;
-  margin:20px 0px 10px;
+  margin:10px 0px 5px;
   clear:left;
 
 }
+
+.main-full .step{ 
+  width:200px;
+  margin:0px 5px;
+  padding:5px;
+  float:left;
+}
+.main-full .step h3{ 
+  font-size:20px;
+  color:#fd0067;
+  font-weight:bold;
+  font-family:arial;
+  margin:0px 0px 2px;
+}
+.main-full .step .description{
+  font-size:12px;
+  font-family:arial;
+  line-height:16px;
+  margin-bottom:1px;
+} 
+.main-full .step img{ 
+  margin:10px 5px;
+}
+.main-full .step img.letterpresslogo{ 
+  margin-left:35px;
+}
+.main-full .step img.uploading{ 
+  margin:25px 0px 20px 35px;
+}
+.main-full .step img.words{ 
+  margin:30px 0px 20px 5px;
+}
+
+.main-full .step .note{
+  font-size:14px;
+  line-height:16px;
+  font-family:arial;
+  color:#999;
+} 
+.main-full .step .note em{
+  font-size:14px;
+  text-transform:uppercase;
+  margin-bottom:3px;
+}
+.main-full .tryit { 
+  clear:both;
+  font-size:16px;
+  font-weight:bold;
+  font-family:arial;
+  text-align:center;
+}
+
 .main-full .footer{ 
   position:absolute;
   bottom:0px;

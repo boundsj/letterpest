@@ -31,6 +31,19 @@ $(function(){
   setNumber(".boardcount", boardcount);
   setNumber(".wordcount", wordcount);
 
+
+  $(".nav li").on("click", function(e){
+    var tab = $(e.currentTarget).attr("data-tab");
+    $(".nav li").removeClass("active");
+    $(e.currentTarget).addClass("active");
+    $(".content").not("."+tab).fadeOut('normal', function(){
+      $(".content").not("."+tab).hide();
+      $(".content."+tab).fadeIn('normal');
+    });
+    
+
+  });
+
 });
 
 
