@@ -53,7 +53,121 @@ body {
 .main-full {
   /* put some css here!!! */
   font-size: 42px;
+
 }
+
+.main-full .stripe{ 
+  background:url("/static/img/top_stripe.jpg") repeat-x;
+  height:8px;
+  position:absolute;
+  left:0px;
+  right:0px;
+  top:0px;
+}
+.main-full .header{ 
+  width:199px;
+  margin:10px auto;
+}
+.main-full .nav{ 
+
+  width:350px;
+  text-align:center;
+  margin:10px auto 50px;
+
+}
+.main-full .nav li{
+  display:inline;
+  list-style:none;
+  font-family:arial;
+  font-size:20px;
+  padding:5px;
+  font-weight:normal;
+  cursor:pointer;
+}
+
+.main-full .nav li.active{
+  background:#60ffbd;
+}
+
+.main-full .content{ 
+  width:900px;
+  margin:auto;
+  position:relative;
+
+}
+.main-full .dictionary{ 
+  width:350px;
+  height:250px;
+  float:right;
+  background:#eee;
+
+}
+.main-full .counts{ 
+  width:450px;
+}
+.main-full .count{ 
+  width:450px;
+  float:left;
+  position:relative;
+  overflow:hidden;
+  height:60px;
+}
+.main-full .count .number{ 
+  float:right;
+  position:relative;
+  -moz-transition: all 2s ease 0.5s; 
+  -webkit-transition: all 2s ease 0.5s;  
+  -ms-transition: all 2s ease 0.5s;  
+  -o-transition: all 2s ease 0.5s;  
+  transition: all 2s ease 0.5s;  
+}
+.main-full .count .number div{ 
+  width:52px;
+  height:52px;
+  padding:5px;
+  text-align:center;
+  font-size:54px;
+  font-weight:bold;
+  color:#fff;
+}
+
+.main-full .boardcount .number{ 
+  background:#60ffbd;
+}
+.main-full .boardcount .filled{
+  background:#489777;
+} 
+.main-full .wordcount .number{ 
+  background:#e60168;
+}
+.main-full .wordcount .filled{
+  background:#8d174d;
+} 
+
+
+.main-full h2{ 
+  font-weight:bold;
+  
+}
+.main-full h5{ 
+  font-size:16px;
+  color:#aaa;
+  text-transform:uppercase;
+  margin:20px 0px 10px;
+  clear:left;
+
+}
+.main-full .footer{ 
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  z-index:-100;
+}
+.main-full .footer .pest{
+  margin:auto;
+  width:449;
+} 
 
 /* by default, don't display mobile stuff */
 .main {
