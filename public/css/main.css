@@ -102,8 +102,23 @@ body {
   width:350px;
   height:250px;
   float:right;
-  background:#eee;
-
+  margin-top:35px;
+}
+.main-full .dictionary .word{ 
+  font-size:60px;
+  font-weight:bold;
+  margin:20px 0px;
+}
+.main-full .dictionary .guide{ 
+  font-size:14px;
+  font-family: arial;
+  font-style: italic;
+  margin:5px 0px;
+}
+.main-full .dictionary .meaning{
+  font-size:18px;
+  font-family: arial;
+  margin:15px 0px
 }
 .main-full .counts{ 
   width:450px;
