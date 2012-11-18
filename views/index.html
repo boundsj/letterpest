@@ -4,13 +4,109 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="/static/js/custom_upload.js"></script>
+  <script src="/static/js/home.js"></script>
   <link href="/static/css/areset.css" rel="stylesheet" type="text/css">
   <link href="/static/css/main.css" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 
 <div class="main-full">
-    <span>Here it is!!!!! your main page</span>
+  <div class="stripe"></div>
+
+  <div class="header"><img src="/static/img/letterpest_logo.png" /></div>
+
+  <ul class="nav">
+    <li data-tab="pestboard">Pestboard</li>
+    <li data-tab="how">How It Works</li>
+    <li data-tab="about">About</li>
+  </ul>
+  <div class="content pestboard">
+    <div class="dictionary">
+      word meanings
+    </div>
+
+    <div class="counts">
+      <h2>Pestboard</h2>
+      <h5>total game boards uploaded</h5>
+      <div class="boardcount count">
+        <div class="number">0</div>
+        <div class="number">0</div>
+        <div class="number">0</div>
+        <div class="number">0</div>
+        <div class="number">0</div>
+      </div>
+      <div class="clear"></div>
+      <h5>total words found</h5>
+      <div class="wordcount count">
+        <div class="number">0</div>
+        <div class="number">0</div>
+        <div class="number">0</div>
+        <div class="number">0</div>
+        <div class="number">0</div>
+        <div class="number">0</div>
+        <div class="number">0</div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="footer">
+      <div class="pest"><img src="/static/img/footer_pest.png" /></div>
+    </div>
+
+  </div>
+  <div class="content how hide">
+    <h2>How it works</h2>
+    <div class="step">
+      <h3>Step 1</h3>
+      <div class="description">Go to one of the games in the Letterpress app on your phone.</div>
+      <img src="/static/img/letterpress_logo.png" class="letterpresslogo" />
+    </div>
+    <div class="step">
+      <h3>Step 2</h3>
+      <div class="description">Take a screenshot of your game.</div>
+      <img src="/static/img/screenshotting.png" class="howtoimg" />
+      <div class="note"><em>How to screenshot</em> <br />
+        Hold down the hold and home buttons as the same time.
+      </div>
+    </div>
+    <div class="step">
+      <h3>Step 3</h3>
+      <div class="description">Go back to letterpest and upload your board.</div>
+      <img src="/static/img/uploading.png" class="uploading" />
+      <div class="note"><em>Note</em> <br />
+        Uploading only works in iOS6. This is not supported in other iOSs.
+      </div>
+
+    </div>
+    <div class="step">
+      <h3>Step 4</h3>
+      <div class="description">All the words you can possibly play to beat your frienemies!</div>
+      <img src="/static/img/words.png" class="words" />
+      <div class="note"><em>Plus</em> <br />
+        Search for words with specific letters.
+      </div>
+
+    </div>
+
+    <div class="tryit">Try it out by opening Letterpest on your phone today!</div>
+
+    <div class="footer">
+      <div class="pest"><img src="/static/img/footer_pest.png" /></div>
+    </div>
+
+    
+  </div>
+  <div class="content about hide">
+    <h2>About</h2>
+
+    <div class="footer">
+      <div class="pest"><img src="/static/img/footer_pest.png" /></div>
+    </div>
+
+  </div>
+
+
+  
+  
 </div>
 
 <div class="main">

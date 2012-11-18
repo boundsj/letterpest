@@ -34,8 +34,19 @@ Extractor = function(){
 
       ctx.drawImage(img, topX, topY, 128, 128, 0, 0, 128, 128);
 
-      // change all non black pixels to white to simplify image
-      var imageData = ctx.getImageData(0, 0, 128, 128);
+    // change all non black pixels to white to simplify image
+    var imageData = ctx.getImageData(0, 0, 128, 128);
+    for (var i = 0; i < imageData.data.length; i += 4) {
+      var r = imageData.data[i];
+      var g = imageData.data[i+1];
+      var b = imageData.data[i+2];
+      if (r + g + b > 150) {
+        imageData.data[i] = 255;
+        imageData.data[i+1] = 255;
+        imageData.data[i+2] = 255;
+      }
+    }
+    ctx.putImageData(imageData, 0, 0);
 
 
       contexts.push(ctx);
