@@ -13,9 +13,14 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.bodyParser({uploadDir:'./uploads'}));
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
+app.use(express.cookieParser());
 
 app.get('/', function(req, res){
   res.render('index');
+});
+
+app.get('/instructions', function(req, res){
+  res.render('instructions');
 });
 
 app.post('/file-upload', function(req, res){
@@ -104,5 +109,4 @@ train.start();
 var port = process.env.PORT || 3000
 app.listen(port);
 console.log('listening on port:', port);
-
 

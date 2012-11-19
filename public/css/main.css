@@ -102,6 +102,51 @@ body {
 }
 
 /*
+ * Instructions page
+ */
+
+.instructions {
+}
+.instructions .title {
+  text-align: center;
+  font-size: 60px;
+}
+.instructions .logo_main {
+  background-image: url('/static/img/mouse_instructions.png');
+  width: 135px;
+  height: 121px;
+  background-size: 135px 121px;
+  position: absolute;
+  top: 48px;
+  right: 28px;
+  z-index: -1000;
+  opacity: 0.5;
+}
+.instructions .inst {
+ margin-top: 20px;
+ margin-left: 30px;
+ width: 120px;
+ font-size: 18px;
+ font-family: 'Lato';
+ color: #A8A8A8;
+}
+.instructions .welcome_sequence {
+  background-image: url('/static/img/mobile_welcome_1.png');
+  width: 320px;
+  height: 315px;
+  background-size: 320px 315px;
+  margin-top: 30px;
+}
+.instructions .skip-sequence {
+ margin-top: 15px;
+ text-align: center;
+ font-family: 'Lato';
+ font-size: 20px;
+ color: #98064B;
+ height: 80px;
+}
+
+/*
  * Results page
  */
 
