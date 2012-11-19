@@ -53,7 +53,193 @@ body {
 .main-full {
   /* put some css here!!! */
   font-size: 42px;
+
 }
+
+.main-full .stripe{ 
+  background:url("/static/img/top_stripe.jpg") repeat-x;
+  height:8px;
+  position:absolute;
+  left:0px;
+  right:0px;
+  top:0px;
+}
+.main-full .header{ 
+  width:199px;
+  margin:0px auto 0px;
+}
+.main-full .nav{ 
+
+  width:350px;
+  text-align:center;
+  margin:0px auto 5px;
+
+}
+.main-full .nav li{
+  display:inline;
+  list-style:none;
+  font-family:arial;
+  font-size:16px;
+  padding:5px;
+  font-weight:normal;
+  cursor:pointer;
+}
+
+.main-full .nav li.active{
+  background:#60ffbd;
+}
+
+.main-full .content{ 
+  width:900px;
+  margin:auto;
+  position:relative;
+  min-height:75%;
+}
+.main-full .content.hide{ 
+  display:none;
+}
+.main-full .dictionary{ 
+  width:350px;
+  height:250px;
+  float:right;
+  margin-top:35px;
+}
+.main-full .dictionary .word{ 
+  font-size:60px;
+  font-weight:bold;
+  margin:20px 0px;
+}
+.main-full .dictionary .guide{ 
+  font-size:14px;
+  font-family: arial;
+  font-style: italic;
+  margin:5px 0px;
+}
+.main-full .dictionary .meaning{
+  font-size:18px;
+  font-family: arial;
+  margin:15px 0px
+}
+.main-full .counts{ 
+  width:450px;
+}
+.main-full .count{ 
+  width:450px;
+  float:left;
+  position:relative;
+  overflow:hidden;
+  height:60px;
+}
+.main-full .count .number{ 
+  float:right;
+  position:relative;
+  -moz-transition: all 2s ease 0.5s; 
+  -webkit-transition: all 2s ease 0.5s;  
+  -ms-transition: all 2s ease 0.5s;  
+  -o-transition: all 2s ease 0.5s;  
+  transition: all 2s ease 0.5s;  
+}
+.main-full .count .number div{ 
+  width:52px;
+  height:52px;
+  padding:5px;
+  text-align:center;
+  font-size:54px;
+  font-weight:bold;
+  color:#fff;
+}
+
+.main-full .boardcount .number{ 
+  background:#60ffbd;
+}
+.main-full .boardcount .filled{
+  background:#489777;
+} 
+.main-full .wordcount .number{ 
+  background:#e60168;
+}
+.main-full .wordcount .filled{
+  background:#8d174d;
+} 
+
+
+.main-full h2{ 
+  font-weight:bold;
+  text-transform:uppercase;
+  font-size:36px;
+  margin-bottom:2px;
+}
+.main-full h5{ 
+  font-size:16px;
+  color:#aaa;
+  text-transform:uppercase;
+  margin:10px 0px 5px;
+  clear:left;
+
+}
+
+.main-full .step{ 
+  width:200px;
+  margin:0px 5px;
+  padding:5px;
+  float:left;
+}
+.main-full .step h3{ 
+  font-size:20px;
+  color:#fd0067;
+  font-weight:bold;
+  font-family:arial;
+  margin:0px 0px 2px;
+}
+.main-full .step .description{
+  font-size:12px;
+  font-family:arial;
+  line-height:16px;
+  margin-bottom:1px;
+} 
+.main-full .step img{ 
+  margin:10px 5px;
+}
+.main-full .step img.letterpresslogo{ 
+  margin-left:35px;
+}
+.main-full .step img.uploading{ 
+  margin:25px 0px 20px 35px;
+}
+.main-full .step img.words{ 
+  margin:30px 0px 20px 5px;
+}
+
+.main-full .step .note{
+  font-size:14px;
+  line-height:16px;
+  font-family:arial;
+  color:#999;
+} 
+.main-full .step .note em{
+  font-size:14px;
+  text-transform:uppercase;
+  margin-bottom:3px;
+}
+.main-full .tryit { 
+  clear:both;
+  font-size:16px;
+  font-weight:bold;
+  font-family:arial;
+  text-align:center;
+}
+
+.main-full .footer{ 
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  z-index:-100;
+}
+.main-full .footer .pest{
+  margin:auto;
+  width:449;
+} 
 
 /* by default, don't display mobile stuff */
 .main {
