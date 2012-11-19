@@ -69,7 +69,6 @@ body {
   margin:0px auto 0px;
 }
 .main-full .nav{ 
-
   width:350px;
   text-align:center;
   margin:0px auto 5px;
@@ -78,10 +77,10 @@ body {
 .main-full .nav li{
   display:inline;
   list-style:none;
-  font-family:arial;
+  font-family:'Lato';
   font-size:16px;
   padding:5px;
-  font-weight:normal;
+  font-weight:400;
   cursor:pointer;
 }
 
@@ -129,8 +128,9 @@ body {
   height:52px;
   padding:5px;
   text-align:center;
+  font-family: 'Lato';
   font-size:54px;
-  font-weight:bold;
+  font-weight:700;
   color:#fff;
 }
 
@@ -172,13 +172,13 @@ body {
 .main-full .step h3{ 
   font-size:20px;
   color:#fd0067;
-  font-weight:bold;
-  font-family:arial;
+  font-weight:700;
+  font-family:'Lato';
   margin:0px 0px 2px;
 }
 .main-full .step .description{
   font-size:12px;
-  font-family:arial;
+  font-family:'Lato';
   line-height:16px;
   margin-bottom:1px;
 } 
@@ -198,7 +198,7 @@ body {
 .main-full .step .note{
   font-size:14px;
   line-height:16px;
-  font-family:arial;
+  font-family:'Lato';
   color:#999;
 } 
 .main-full .step .note em{
@@ -209,8 +209,8 @@ body {
 .main-full .tryit { 
   clear:both;
   font-size:16px;
-  font-weight:bold;
-  font-family:arial;
+  font-weight:700;
+  font-family:'Lato';
   text-align:center;
 }
 
