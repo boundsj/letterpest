@@ -5,9 +5,10 @@ var express = require('express')
   , letter_discovery = require('./letter_disovery.js')
   , engines = require('consolidate')
   , knox = require('knox')
-  , redis = require('redis-url').connect(process.env.REDISTOGO_URL)
   , _ = require('underscore');
  
+if(process.env.REDISTOGO_URL)
+  var redis = require('redis-url').connect(process.env.REDISTOGO_URL)
 
 app.engine('html', engines.hogan);
 app.use('/static', express.static(__dirname + '/public'));
@@ -18,15 +19,21 @@ app.set('views', __dirname + '/views');
 app.use(express.cookieParser());
 
 app.get('/', function(req, res){
-  redis.mget(["boardcount", "wordcount"], function (err, replies) {
-    replies.forEach(function(r){
-      if(!r)
-        r = 0;
-    });
+  if(redis){
+    redis.mget(["boardcount", "wordcount"], function (err, replies) {
+      replies.forEach(function(r){
+        if(!r)
+          r = 0;
+      });
     
-    res.render('index', {boardcount:replies[0], 
-                         wordcount:replies[1]});
-  });
+      res.render('index', {boardcount:replies[0], 
+                           wordcount:replies[1]});
+    });
+  }else{
+    res.render('index', {boardcount:234, 
+                         wordcount:134234});
+   
+  }
 });
 
 app.get('/instructions', function(req, res){
@@ -92,8 +99,10 @@ app.post('/file-upload', function(req, res){
       if (200 == res.statusCode) {
         console.log('saved to s3');
       }
-      redis.incrby("wordcount", words.length);
-      redis.incr("boardcount");
+      if(redis){
+        redis.incrby("wordcount", words.length);
+        redis.incr("boardcount");
+      }
 
       result.render('result', {
         image: awsPath,
