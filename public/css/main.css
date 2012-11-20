@@ -188,32 +188,33 @@ body {
   margin:0px 0px 2px;
 }
 .main-full .step .description{
-  font-size:12px;
-  line-height:16px;
-  margin-bottom:1px;
+  font-size:15px;
+  line-height:19px;
+  margin:9px 0px 1px 0px;
 } 
 .main-full .step img{ 
   margin:10px 5px;
 }
 .main-full .step img.letterpresslogo{ 
-  margin-left:35px;
+  margin:73px 0px 73px 35px;
 }
 .main-full .step img.uploading{ 
-  margin:25px 0px 20px 35px;
+  margin:43px 0px 19px 35px;
 }
 .main-full .step img.words{ 
-  margin:30px 0px 20px 5px;
+  margin:50px 0px 13px 5px;
 }
 
 .main-full .step .note{
   font-size:14px;
   line-height:16px;
-  color:#999;
+  margin-top: 10px;
 } 
 .main-full .step .note em{
   font-size:14px;
   text-transform:uppercase;
   margin-bottom:3px;
+  font-weight: 300;
 }
 .main-full .tryit { 
   clear:both;
@@ -221,7 +222,6 @@ body {
   font-weight:700;
   text-align:center;
 }
-
 .main-full .footer{ 
   position:absolute;
   bottom:0px;
