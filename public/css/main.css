@@ -109,13 +109,11 @@ body {
 }
 .main-full .dictionary .guide{ 
   font-size:14px;
-  font-family: arial;
   font-style: italic;
   margin:5px 0px;
 }
 .main-full .dictionary .meaning{
   font-size:18px;
-  font-family: arial;
   margin:15px 0px
 }
 .main-full .counts{ 
