@@ -1,6 +1,4 @@
 
-var boardcount = 345;
-var wordcount = 1123453;
 
 
 

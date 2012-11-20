@@ -8,7 +8,10 @@
     "express": "3.0.0",
     "hogan.js": "2.0.0",
     "underscore": "1.4.2",
-    "knox": "0.4.1"
+    "knox": "0.4.1",
+    "hiredis":"0.1.14",
+    "redis":"0.8.2",
+    "redis-url": ">=0.1.0"    
   },
   "engines": {
     "node": "0.8.12",

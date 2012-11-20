@@ -5,7 +5,9 @@ var express = require('express')
   , letter_discovery = require('./letter_disovery.js')
   , engines = require('consolidate')
   , knox = require('knox')
+  , redis = require('redis-url').connect(process.env.REDISTOGO_URL)
   , _ = require('underscore');
+ 
 
 app.engine('html', engines.hogan);
 app.use('/static', express.static(__dirname + '/public'));
@@ -16,7 +18,15 @@ app.set('views', __dirname + '/views');
 app.use(express.cookieParser());
 
 app.get('/', function(req, res){
-  res.render('index');
+  redis.mget(["boardcount", "wordcount"], function (err, replies) {
+    replies.forEach(function(r){
+      if(!r)
+        r = 0;
+    });
+    
+    res.render('index', {boardcount:replies[0], 
+                         wordcount:replies[1]});
+  });
 });
 
 app.get('/instructions', function(req, res){
@@ -82,6 +92,9 @@ app.post('/file-upload', function(req, res){
       if (200 == res.statusCode) {
         console.log('saved to s3');
       }
+      redis.incrby("wordcount", words.length);
+      redis.incr("boardcount");
+
       result.render('result', {
         image: awsPath,
         letters: letters,
