@@ -108,7 +108,8 @@ body {
   margin:20px 0px;
 }
 .main-full .dictionary .guide{ 
-  font-size:14px;
+  font-size:16px;
+  font-weight: 300;
   font-style: italic;
   margin:5px 0px;
 }
@@ -166,17 +167,18 @@ body {
 }
 .main-full h5{ 
   font-size:16px;
+  font-weight:300;
   color:#000;
   text-transform:uppercase;
-  margin:10px 0px 5px;
+  margin:35px 0px 15px;
   clear:left;
 
 }
 
 .main-full .step{ 
   width:200px;
-  margin:0px 5px;
-  padding:5px;
+  margin: 28px 5px 0px 0px;
+  padding: 5px 5px 5px 0px;
   float:left;
 }
 .main-full .step h3{ 
