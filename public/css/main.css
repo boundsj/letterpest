@@ -112,7 +112,7 @@ body {
 .main-full .dictionary .word{ 
   font-size:60px;
   font-weight:bold;
-  margin:20px 0px;
+  margin:0px 0px 10px;
 }
 .main-full .dictionary .guide{ 
   font-size:16px;
@@ -152,7 +152,6 @@ body {
   font-weight:700;
   color:#fff;
 }
-
 .main-full .boardcount .number{ 
   background:#60ffbd;
 }
@@ -179,13 +178,11 @@ body {
   text-transform:uppercase;
   margin:35px 0px 15px;
   clear:left;
-
 }
-
 .main-full .step{ 
   width:200px;
   margin: 28px 5px 0px 0px;
-  padding: 5px 5px 5px 0px;
+  padding: 5px 20px 5px 0px;
   float:left;
 }
 .main-full .step h3{ 
@@ -197,7 +194,7 @@ body {
 .main-full .step .description{
   font-size:15px;
   line-height:19px;
-  margin:9px 20px 1px 0px;
+  margin:9px 0px 1px 0px;
 } 
 .main-full .step img{ 
   margin:10px 5px;
