@@ -93,6 +93,13 @@ body {
   position:relative;
   min-height:75%;
 }
+.main-full .content.about .footer,
+.main-full .content.pestboard .footer{
+  margin-top:250px;
+} 
+.main-full .content.how .footer{ 
+  margin-top:20px;
+}
 .main-full .content.hide{ 
   display:none;
 }
@@ -223,10 +230,6 @@ body {
   text-align:center;
 }
 .main-full .footer{ 
-  position:absolute;
-  bottom:0px;
-  left:0px;
-  right:0px;
   z-index:-100;
 }
 .main-full .footer .pest{
