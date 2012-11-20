@@ -40,12 +40,14 @@ $(document).ready(function(){
 
   function redrawSkipButton(){
     $('#skip-sequence')
-        .html('')
-        .css({'background-image': 'url("/static/img/start_pestering.png")',
+        .html('Start Pestering')
+        .css({'background': '#e60168',
+              'color': '#ffffff',
+              'line-height': '48px',
+              'text-transform': 'uppercase',
               'width': '210px',
               'height': '50px',
-              'background-size': '220px 50px',
-              'margin': 'auto'});
+              'margin': '0 auto 30px'});
   }
 
   $('#skip-sequence').click(function(){
