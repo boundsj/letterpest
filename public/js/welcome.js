@@ -1,7 +1,7 @@
 $(document).ready(function(){
   function screen2(){
     $('#welcome-sequence')
-        .animate({opacity: 0}, 'slow', function(){
+        .animate({opacity: 0, 'background-color': '#fff'}, 'slow', function(){
             $(this)
                 .css({'background-image': 'url("/static/img/mobile_welcome_2.png")'})
                 .animate({opacity: 1});
@@ -10,7 +10,7 @@ $(document).ready(function(){
   };
   function screen3(){
     $('#welcome-sequence')
-        .animate({opacity: 0}, 'fast', function(){
+        .animate({opacity: 0, 'background-color': '#fff'}, 'fast', function(){
             $(this)
                 .css({'background-image': 'url("/static/img/mobile_welcome_3.png")'})
                 .animate({opacity: 1});
@@ -19,7 +19,7 @@ $(document).ready(function(){
   };
   function screen4(){
     $('#welcome-sequence')
-        .animate({opacity: 0}, 'slow', function(){
+        .animate({opacity: 0, 'background-color': '#fff'}, 'slow', function(){
             $(this)
                 .css({'background-image': 'url("/static/img/mobile_welcome_4.png")'})
                 .animate({opacity: 1});
@@ -28,7 +28,7 @@ $(document).ready(function(){
   };
   function screen5(){
     $('#welcome-sequence')
-        .animate({opacity: 0}, 'fast', function(){
+        .animate({opacity: 0, 'background-color': '#fff'}, 'fast', function(){
             $(this)
                 .css({'background-image': 'url("/static/img/mobile_welcome_5.png")'})
                 .animate({opacity: 1});
@@ -37,7 +37,7 @@ $(document).ready(function(){
   };
   function screen6(){
     $('#welcome-sequence')
-        .animate({opacity: 0}, 'slow', function(){
+        .animate({opacity: 0, 'background-color': '#fff'}, 'slow', function(){
             $(this)
                 .css({'background-image': 'url("/static/img/mobile_welcome_6.png")'})
                 .animate({opacity: 1});
