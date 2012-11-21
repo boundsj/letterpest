@@ -309,7 +309,6 @@ body {
     display: inline;
   }
   .main .title_main {
-    margin-top: 32px;
     width: 100px;
     font-size: 60px;
     margin-left: 22px;
@@ -322,7 +321,7 @@ body {
     width: 125px;
     height: 145px;
     background-size: 125px 145px;
-    margin-bottom: 20px;
+    margin: -36px 0px 20px;
   }
   .main .inst_main {
     font-size: 18px;
@@ -338,7 +337,7 @@ body {
     width: 150px;
     height: 149px;
     background-size: 150px 149px;
-    margin: auto;
+    margin: 0 auto 20px;
   }
 }
 

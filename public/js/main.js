@@ -11,5 +11,9 @@ $(document).ready(function(){
       window.location.replace('/instructions');
     }
   })();
+
+  if (width <= mobileWidth) {
+    $(document).scroll(60);
+  } 
 });
 
