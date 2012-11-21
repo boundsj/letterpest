@@ -1,4 +1,19 @@
 $(document).ready(function(){
+
+  // preload images
+  if (document.images){
+    img2 = new Image();
+    img3 = new Image();
+    img4 = new Image();
+    img5 = new Image();
+    img6 = new Image();
+    img2.src = "/static/img/mobile_welcome_2.png";
+    img3.src = "/static/img/mobile_welcome_3.png";
+    img4.src = "/static/img/mobile_welcome_4.png";
+    img5.src = "/static/img/mobile_welcome_5.png";
+    img6.src = "/static/img/mobile_welcome_6.png";
+  }
+
   function screen2(){
     $('#welcome-sequence')
         .animate({opacity: 0, 'background-color': '#fff'}, 'slow', function(){
@@ -57,6 +72,11 @@ $(document).ready(function(){
               'height': '50px',
               'margin': '0 auto 30px'});
   }
+
+  $('#skip-sequence').click(function(){
+    $.cookie('showInstructions', false);
+    window.location.replace('/');
+  });
 
   $('#skip-sequence').click(function(){
     $.cookie('showInstructions', false);
