@@ -331,7 +331,6 @@ body {
     color: #595959;
     line-height: 125%;
     width: 280px;
-    margin-bottom: 20px;
     margin-left: 22px;
   }
   .main .upload_board {
@@ -339,7 +338,7 @@ body {
     width: 150px;
     height: 149px;
     background-size: 150px 149px;
-    margin: 0 auto 20px;
+    margin: -5 auto 20px;
   }
 }
 
