@@ -13,7 +13,7 @@ $(document).ready(function(){
   })();
 
   if (width <= mobileWidth) {
-    $(document).scroll(60);
+    $(window).scrollTop(1);
   } 
 });
 

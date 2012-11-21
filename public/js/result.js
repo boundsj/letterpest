@@ -50,6 +50,10 @@ $(document).ready(function() {
     populateResultList();
   });
 
+  if (width <= mobileWidth) {
+    $(window).scrollTop(1);
+  } 
+
   /*
    * Highlight the selected word and all letters that could be
    * used in board to spell the word in the game.

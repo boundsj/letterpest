@@ -82,5 +82,10 @@ $(document).ready(function(){
     $.cookie('showInstructions', false);
     window.location.replace('/');
   });
+
+
+  $(window).scrollTop(10);
+ 
+
 });
 
