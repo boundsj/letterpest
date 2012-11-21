@@ -353,6 +353,7 @@ body {
 .instructions .title {
   text-align: center;
   font-size: 60px;
+  background-color: #fff;
 }
 .instructions .logo_main {
   background-image: url('/static/img/mouse_instructions.png');
