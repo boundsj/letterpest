@@ -90,9 +90,11 @@ body {
   position:relative;
   min-height:75%;
 }
-.main-full .content.about .footer,
+.main-full .content.about .footer{ 
+  margin-top:70px;
+}
 .main-full .content.pestboard .footer{
-  margin-top:250px;
+  margin-top:150px;
 } 
 .main-full .content.how .footer{ 
   margin-top:20px;
@@ -344,7 +346,6 @@ body {
 /*
  * Instructions page
  */
-
 .instructions {
 }
 .instructions .title {
