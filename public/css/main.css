@@ -346,11 +346,10 @@ body {
 /*
  * Instructions page
  */
-.instructions {
-}
 .instructions .title {
   text-align: center;
   font-size: 60px;
+  margin-top: -5px;
 }
 .instructions .logo_main {
   background-image: url('/static/img/mouse_instructions.png');
@@ -358,7 +357,7 @@ body {
   height: 121px;
   background-size: 135px 121px;
   position: absolute;
-  top: 40px;
+  top: 33px;
   right: 28px;
   z-index: -1000;
   opacity: 0.5;
@@ -366,17 +365,18 @@ body {
 .instructions .inst {
  margin-top: 20px;
  margin-left: 30px;
- width: 120px;
+ width: 140px;
  font-size: 18px;
  font-family: 'Lato';
  color: #A8A8A8;
+ line-height: 23px;
 }
 .instructions .welcome_sequence {
   background-image: url('/static/img/mobile_welcome_1.png');
   width: 320px;
   height: 315px;
   background-size: 320px 315px;
-  margin-top: 30px;
+  margin-top: 17px;
 }
 .instructions .skip-sequence {
  margin-top: 15px;
