@@ -6,12 +6,16 @@ $(document).ready(function(){
                 .css({'background-image': 'url("/static/img/mobile_welcome_2.png")'})
                 .animate({opacity: 1});
         });
-    window.setTimeout(screen3, 1000);
+    window.setTimeout(screen3, 5000);
   };
   function screen3(){
     $('#welcome-sequence')
-        .css({'background-image': 'url("/static/img/mobile_welcome_3.png")'});
-    window.setTimeout(screen4, 4000);
+        .animate({opacity: 0}, 'fast', function(){
+            $(this)
+                .css({'background-image': 'url("/static/img/mobile_welcome_3.png")'})
+                .animate({opacity: 1});
+        });
+    window.setTimeout(screen4, 5000);
   };
   function screen4(){
     $('#welcome-sequence')
@@ -20,11 +24,15 @@ $(document).ready(function(){
                 .css({'background-image': 'url("/static/img/mobile_welcome_4.png")'})
                 .animate({opacity: 1});
         });
-    window.setTimeout(screen5, 2000);
+    window.setTimeout(screen5, 5000);
   };
   function screen5(){
     $('#welcome-sequence')
-        .css({'background-image': 'url("/static/img/mobile_welcome_5.png")'});
+        .animate({opacity: 0}, 'fast', function(){
+            $(this)
+                .css({'background-image': 'url("/static/img/mobile_welcome_5.png")'})
+                .animate({opacity: 1});
+        });
     window.setTimeout(screen6, 5000);
   };
   function screen6(){
@@ -33,8 +41,8 @@ $(document).ready(function(){
             $(this)
                 .css({'background-image': 'url("/static/img/mobile_welcome_6.png")'})
                 .animate({opacity: 1});
+            redrawSkipButton();
         });
-    redrawSkipButton();
   };
   window.setTimeout(screen2, 5000);
 
