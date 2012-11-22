@@ -57,6 +57,7 @@ $(document).ready(function(){
                 .css({'background-image': 'url("/static/img/mobile_welcome_6.png")'})
                 .animate({opacity: 1});
             redrawSkipButton();
+            window.setTimeout(redirectToMainScreen, 5000);
         });
   };
   window.setTimeout(screen2, 5000);
@@ -73,6 +74,10 @@ $(document).ready(function(){
               'margin': '0 auto 30px'});
   }
 
+  function redirectToMainScreen(){
+    window.location.replace('/');
+  }
+
   $('#skip-sequence').click(function(){
     $.cookie('showInstructions', false);
     window.location.replace('/');
@@ -85,7 +90,7 @@ $(document).ready(function(){
 
 
   $(window).scrollTop(10);
- 
+
 
 });
 
