@@ -50,9 +50,12 @@ $(document).ready(function() {
     populateResultList();
   });
 
+  var mobileWidth = 480;
+  var width = $(window).width();
+
   if (width <= mobileWidth) {
     $(window).scrollTop(1);
-  } 
+  }
 
   /*
    * Highlight the selected word and all letters that could be
