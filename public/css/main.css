@@ -340,6 +340,36 @@ body {
     background-size: 150px 149px;
     margin: -5 auto 20px;
   }
+  .main .spinner {
+    display: none;
+  }
+  .main .spinner .juggler { 
+    display: block;
+    margin: 100px auto 0px;
+    width: 106px;
+    z-index: -1;
+    animation: spin .9s infinite linear;
+    -webkit-animation: spin .9s infinite linear;
+    -moz-animation: spin .9s infinite linear;
+    -o-animation: spin .9s infinite linear;
+    -ms-animation: spin .9s infinite linear;
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg);}
+  }
+  @-moz-keyframes spin {
+    to { -moz-transform: rotate(360deg);}
+  }
+  @-o-keyframes spin {
+    to { -o-transform: rotate(360deg);}
+  }
+  @-ms-keyframes spin {
+    to { -ms-transform: rotate(360deg);}
+  }
+  .main .spinner p {
+    text-align: center;
+    padding-top: 20px;
+  }
 }
 
 /*
