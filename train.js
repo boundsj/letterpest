@@ -11,7 +11,7 @@ img.onerror = function(e){
 };
 
 function _getPixelData(ctx) {
-  var data = ctx.getImageData(20, 20, 93, 93)
+  var data = ctx.getImageData(20, 20, 108, 108)
     , trainingInput = [];
 
   // take a sparse sampling of pixles in the center of the tile
