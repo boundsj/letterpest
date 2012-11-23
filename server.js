@@ -6,7 +6,7 @@ var express = require('express')
   , engines = require('consolidate')
   , knox = require('knox')
   , _ = require('underscore');
- 
+
 if(process.env.REDISTOGO_URL)
   var redis = require('redis-url').connect(process.env.REDISTOGO_URL)
 
@@ -25,14 +25,14 @@ app.get('/', function(req, res){
         if(!r)
           r = 0;
       });
-    
-      res.render('index', {boardcount:replies[0], 
+
+      res.render('index', {boardcount:replies[0],
                            wordcount:replies[1]});
     });
   }else{
-    res.render('index', {boardcount:234, 
+    res.render('index', {boardcount:234,
                          wordcount:134234});
-   
+
   }
 });
 
@@ -90,6 +90,20 @@ app.post('/file-upload', function(req, res){
 
     var words = letter_discovery.searchTrie(letters.join(''));
 
+    console.log('rendering...');
+    result.render('result', {
+      image: awsPath,
+      letters: letters,
+      letters_row1: lettersUpperCase.slice(0, 5),
+      letters_row2: lettersUpperCase.slice(5, 10),
+      letters_row3: lettersUpperCase.slice(10, 15),
+      letters_row4: lettersUpperCase.slice(15, 20),
+      letters_row5: lettersUpperCase.slice(20, 25),
+      words: _.sortBy(words, function(word) { return 1 / word.length; }),
+      wordCount: words.length,
+    });
+    console.log('done');
+
     console.log('attempting to save ' + uploadPath + ' to s3');
     var headers = {'Content-Type': 'image/jpeg', 'x-amz-acl': 'public-read'};
     client.putFile(uploadPath, req.files.image_name.path + '.jpg', headers, function(err, res){
@@ -100,21 +114,22 @@ app.post('/file-upload', function(req, res){
         console.log('saved to s3');
       }
       if(redis){
+        console.log('updating redis...');
         redis.incrby("wordcount", words.length);
         redis.incr("boardcount");
+        console.log('done with redis');
       }
-
-      result.render('result', {
-        image: awsPath,
-        letters: letters,
-        letters_row1: lettersUpperCase.slice(0, 5),
-        letters_row2: lettersUpperCase.slice(5, 10),
-        letters_row3: lettersUpperCase.slice(10, 15),
-        letters_row4: lettersUpperCase.slice(15, 20),
-        letters_row5: lettersUpperCase.slice(20, 25),
-        words: _.sortBy(words, function(word) { return 1 / word.length; }),
-        wordCount: words.length,
-      });
+      //result.render('result', {
+      //  image: awsPath,
+      //  letters: letters,
+      //  letters_row1: lettersUpperCase.slice(0, 5),
+      //  letters_row2: lettersUpperCase.slice(5, 10),
+      //  letters_row3: lettersUpperCase.slice(10, 15),
+      //  letters_row4: lettersUpperCase.slice(15, 20),
+      //  letters_row5: lettersUpperCase.slice(20, 25),
+      //  words: _.sortBy(words, function(word) { return 1 / word.length; }),
+      //  wordCount: words.length,
+      //});
     });
   });
 
