@@ -10,6 +10,7 @@ var express = require('express')
 if(process.env.REDISTOGO_URL)
   var redis = require('redis-url').connect(process.env.REDISTOGO_URL)
 
+app.use(express.compress());
 app.engine('html', engines.hogan);
 app.use('/static', express.static(__dirname + '/public'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
@@ -78,7 +79,7 @@ app.post('/file-upload', function(req, res){
     }
 
     var words = letter_discovery.searchTrie(letters.join(''));
-    words = _.first(words, 1000);
+    //words = _.first(words, 1000);
 
     if(redis){
       console.log('updating redis...');
