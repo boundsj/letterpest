@@ -89,6 +89,7 @@ app.post('/file-upload', function(req, res){
     }
 
     var words = letter_discovery.searchTrie(letters.join(''));
+    words = _.first(words, 100);
 
     if(redis){
       console.log('updating redis...');
