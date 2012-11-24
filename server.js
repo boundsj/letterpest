@@ -90,6 +90,13 @@ app.post('/file-upload', function(req, res){
 
     var words = letter_discovery.searchTrie(letters.join(''));
 
+    if(redis){
+      console.log('updating redis...');
+      redis.incrby("wordcount", words.length);
+      redis.incr("boardcount");
+      console.log('done with redis');
+    }
+
     console.log('rendering...');
     result.render('result', {
       image: awsPath,
