@@ -52,7 +52,6 @@ $(document).ready(function() {
 
   var mobileWidth = 480;
   var width = $(window).width();
-
   if (width <= mobileWidth) {
     $(window).scrollTop(1);
   }

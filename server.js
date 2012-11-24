@@ -104,33 +104,22 @@ app.post('/file-upload', function(req, res){
     });
     console.log('done');
 
-    console.log('attempting to save ' + uploadPath + ' to s3');
-    var headers = {'Content-Type': 'image/jpeg', 'x-amz-acl': 'public-read'};
-    client.putFile(uploadPath, req.files.image_name.path + '.jpg', headers, function(err, res){
-      if (err) {
-        console.log(err);
-      }
-      if (200 == res.statusCode) {
-        console.log('saved to s3');
-      }
-      if(redis){
-        console.log('updating redis...');
-        redis.incrby("wordcount", words.length);
-        redis.incr("boardcount");
-        console.log('done with redis');
-      }
-      //result.render('result', {
-      //  image: awsPath,
-      //  letters: letters,
-      //  letters_row1: lettersUpperCase.slice(0, 5),
-      //  letters_row2: lettersUpperCase.slice(5, 10),
-      //  letters_row3: lettersUpperCase.slice(10, 15),
-      //  letters_row4: lettersUpperCase.slice(15, 20),
-      //  letters_row5: lettersUpperCase.slice(20, 25),
-      //  words: _.sortBy(words, function(word) { return 1 / word.length; }),
-      //  wordCount: words.length,
-      //});
-    });
+    //console.log('attempting to save ' + uploadPath + ' to s3');
+    //var headers = {'Content-Type': 'image/jpeg', 'x-amz-acl': 'public-read'};
+    //client.putFile(uploadPath, req.files.image_name.path + '.jpg', headers, function(err, res){
+    //  if (err) {
+    //    console.log(err);
+    //  }
+    //  if (200 == res.statusCode) {
+    //    console.log('saved to s3');
+    //  }
+    //  if(redis){
+    //    console.log('updating redis...');
+    //    redis.incrby("wordcount", words.length);
+    //    redis.incr("boardcount");
+    //    console.log('done with redis');
+    //  }
+    //});
   });
 
   extractor.extractFromPath(uploadPath);
