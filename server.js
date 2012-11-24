@@ -46,17 +46,6 @@ app.post('/file-upload', function(req, res){
   var result = res;
   console.log(uploadPath);
 
-  // save image to s3
-  // XXX: should probably delete file locally
-  //      but, oddly, when on heroku the file is removed from
-  //      uploads without me doing anything - in any case
-  //      the file is saved to s3 here
-  var client = knox.createClient({
-      key: process.env.AWS_KEY || ''
-    , secret: process.env.AWS_SECRET || ''
-    , bucket: process.env.AWS_BUCKET || ''
-  });
-
   extractor = new extract_tiles.Extractor();
 
   // after we've got the tile canvas contexts, pass them through
@@ -112,6 +101,16 @@ app.post('/file-upload', function(req, res){
     });
     console.log('done');
 
+    // XXX: should probably delete file locally
+    //      but, oddly, when on heroku the file is removed from
+    //      uploads without me doing anything - in any case
+    //      the file is saved to s3 here
+    //var client = knox.createClient({
+    //    key: process.env.AWS_KEY || ''
+    //  , secret: process.env.AWS_SECRET || ''
+    //  , bucket: process.env.AWS_BUCKET || ''
+    //});
+    //
     //console.log('attempting to save ' + uploadPath + ' to s3');
     //var headers = {'Content-Type': 'image/jpeg', 'x-amz-acl': 'public-read'};
     //client.putFile(uploadPath, req.files.image_name.path + '.jpg', headers, function(err, res){
