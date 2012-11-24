@@ -52,9 +52,9 @@ app.post('/file-upload', function(req, res){
   //      uploads without me doing anything - in any case
   //      the file is saved to s3 here
   var client = knox.createClient({
-      key: process.env.AWS_KEY
-    , secret: process.env.AWS_SECRET
-    , bucket: process.env.AWS_BUCKET
+      key: process.env.AWS_KEY || ''
+    , secret: process.env.AWS_SECRET || ''
+    , bucket: process.env.AWS_BUCKET || ''
   });
 
   extractor = new extract_tiles.Extractor();
